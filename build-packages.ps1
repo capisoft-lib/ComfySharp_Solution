@@ -5,6 +5,13 @@ Write-Host "ComfySharp Package Build Script" -ForegroundColor Green
 Write-Host "=================================" -ForegroundColor Green
 Write-Host ""
 
+# Ensure all submodules are up to date
+Write-Host "Updating submodules..." -ForegroundColor Yellow
+git submodule update --init --recursive
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Warning: Could not update submodules" -ForegroundColor Yellow
+}
+
 # Clean previous builds
 Write-Host "Cleaning previous builds..." -ForegroundColor Yellow
 dotnet clean

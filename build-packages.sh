@@ -6,6 +6,13 @@ echo "ComfySharp Package Build Script"
 echo "================================="
 echo ""
 
+# Ensure all submodules are up to date
+echo "Updating submodules..."
+git submodule update --init --recursive
+if [ $? -ne 0 ]; then
+    echo "Warning: Could not update submodules"
+fi
+
 # Clean previous builds
 echo "Cleaning previous builds..."
 dotnet clean
