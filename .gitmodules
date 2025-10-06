@@ -1,0 +1,15 @@
+[submodule "ComfySharp"]
+	path = ComfySharp
+	url = ./ComfySharp
+[submodule "ComfySharp.Extensions"]
+	path = ComfySharp.Extensions
+	url = ./ComfySharp.Extensions
+[submodule "ComfySharp.Extensions.EasyUse"]
+	path = ComfySharp.Extensions.EasyUse
+	url = ./ComfySharp.Extensions.EasyUse
+[submodule "ComfySharp.Extensions.Nunchaku"]
+	path = ComfySharp.Extensions.Nunchaku
+	url = ./ComfySharp.Extensions.Nunchaku
+[submodule "ComfySharp.Extensions.ReActor"]
+	path = ComfySharp.Extensions.ReActor
+	url = ./ComfySharp.Extensions.ReActor
