@@ -13,3 +13,6 @@
 [submodule "ComfySharp.Extensions.ReActor"]
 	path = ComfySharp.Extensions.ReActor
 	url = ./ComfySharp.Extensions.ReActor
+[submodule "ComfySharp.ClientApi"]
+	path = ComfySharp.ClientApi
+	url = https://github.com/capisoft-lib/ComfySharp.ClientApi.git
