@@ -119,12 +119,28 @@ git submodule add https://github.com/your-org/ComfySharp.NewExtension.git ComfyS
 
 ## 🧪 Testing
 
-Each project contains its own test suite. Run tests for a specific project:
+Each project contains its own test suite and example projects. Run tests for a specific project:
 
 ```bash
-cd ComfySharp.Extensions.Test
+# Run unit tests
+cd ComfySharp.Extensions.Tests
 dotnet test
+
+# Run examples
+cd ComfySharp.Extensions.Examples
+dotnet run
 ```
+
+## 📚 Examples
+
+Each project includes comprehensive example projects demonstrating usage:
+
+- **ComfySharp.Example** - Core library examples
+- **ComfySharp.ClientApi.Example** - API client examples  
+- **ComfySharp.Extensions.Examples** - Extension node examples
+- **ComfySharp.Extensions.EasyUse.Examples** - EasyUse node examples
+- **ComfySharp.Extensions.Nunchaku.Examples** - Nunchaku node examples
+- **ComfySharp.Extensions.ReActor.Examples** - ReActor node examples
 
 ## 📋 Requirements
 

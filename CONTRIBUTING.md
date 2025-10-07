@@ -26,7 +26,7 @@ Thank you for your interest in contributing to ComfySharp! This document provide
 
 4. Run the tests:
    ```bash
-   dotnet run --project ComfySharp.Extensions.Test
+   dotnet run --project ComfySharp.Extensions.Tests
    ```
 
 ## Development Guidelines
@@ -37,7 +37,7 @@ Thank you for your interest in contributing to ComfySharp! This document provide
 ComfySharp/
 ├── ComfySharp/                    # Core library
 ├── ComfySharp.Extensions/         # Extensions library
-├── ComfySharp.Extensions.Test/    # Test project
+├── ComfySharp.Extensions.Tests/    # Test project
 ├── ComfySharp.sln                # Solution file
 ├── README.md
 ├── LICENSE

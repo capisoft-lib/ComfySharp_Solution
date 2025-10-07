@@ -15,31 +15,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions", "ComfySharp.Extensions\ComfySharp.Extensions\ComfySharp.Extensions.csproj", "{4D353844-6102-49B8-AE30-D669EBA1A609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Test", "ComfySharp.Extensions\ComfySharp.Extensions.Test\ComfySharp.Extensions.Test.csproj", "{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Examples", "ComfySharp.Extensions\ComfySharp.Extensions.Examples\ComfySharp.Extensions.Examples.csproj", "{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Tests", "ComfySharp.Extensions\ComfySharp.Extensions.Tests\ComfySharp.Extensions.Tests.csproj", "{62B6C870-5691-4A3B-B2B1-7ACA1D86E201}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions.EasyUse", "ComfySharp.Extensions.EasyUse", "{F571EB89-ABD8-4647-BED1-DB05FB79EAF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.csproj", "{C9D3ACBF-AF5F-4794-8103-263928A9C3AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse.Test", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.Test\ComfySharp.Extensions.EasyUse.Test.csproj", "{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse.Examples", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.Examples\ComfySharp.Extensions.EasyUse.Examples.csproj", "{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse.Tests", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.Tests\ComfySharp.Extensions.EasyUse.Tests.csproj", "{A1B2C3D4-E5F6-7890-ABCD-EF1234567891}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions.Nunchaku", "ComfySharp.Extensions.Nunchaku", "{78C51970-C43B-4E19-8925-B7C17A0918C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.csproj", "{57DAE65B-BCBF-4C78-8B7A-77117055D37D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku.Test", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.Test\ComfySharp.Extensions.Nunchaku.Test.csproj", "{BEE26101-3BB1-4BCF-910A-1AB69A139D74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku.Examples", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.Examples\ComfySharp.Extensions.Nunchaku.Examples.csproj", "{BEE26101-3BB1-4BCF-910A-1AB69A139D74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku.Tests", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.Tests\ComfySharp.Extensions.Nunchaku.Tests.csproj", "{21F9893F-2BD7-430E-8BD4-8E1FAD48A12D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions.ReActor", "ComfySharp.Extensions.ReActor", "{E9DE05B2-A002-48A4-B110-C67D24912901}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.csproj", "{FAE4EA35-CD4A-4A6D-AE4F-A51A5325EDC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor.Test", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.Test\ComfySharp.Extensions.ReActor.Test.csproj", "{F4721A22-C139-457A-BA90-3150745C872F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor.Examples", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.Examples\ComfySharp.Extensions.ReActor.Examples.csproj", "{F4721A22-C139-457A-BA90-3150745C872F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor.Tests", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.Tests\ComfySharp.Extensions.ReActor.Tests.csproj", "{37AE903F-1885-4F79-8CC4-540B1D5DF4B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.ClientApi", "ComfySharp.ClientApi", "{22222222-2222-2222-2222-222222222222}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.ClientApi", "ComfySharp.ClientApi\ComfySharp.ClientApi\ComfySharp.ClientApi.csproj", "{33333333-3333-3333-3333-333333333333}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.ClientApi.Example", "ComfySharp.ClientApi\ComfySharp.ClientApi.Example\ComfySharp.ClientApi.Example.csproj", "{44444444-4444-4444-4444-444444444444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.ClientApi.Tests", "ComfySharp.ClientApi\ComfySharp.ClientApi.Tests\ComfySharp.ClientApi.Tests.csproj", "{A45FB97D-A11C-C241-5040-6330522F4C86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +77,10 @@ Global
 		{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62B6C870-5691-4A3B-B2B1-7ACA1D86E201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62B6C870-5691-4A3B-B2B1-7ACA1D86E201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62B6C870-5691-4A3B-B2B1-7ACA1D86E201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62B6C870-5691-4A3B-B2B1-7ACA1D86E201}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9D3ACBF-AF5F-4794-8103-263928A9C3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9D3ACBF-AF5F-4794-8103-263928A9C3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9D3ACBF-AF5F-4794-8103-263928A9C3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +89,10 @@ Global
 		{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567891}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57DAE65B-BCBF-4C78-8B7A-77117055D37D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57DAE65B-BCBF-4C78-8B7A-77117055D37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57DAE65B-BCBF-4C78-8B7A-77117055D37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,6 +101,10 @@ Global
 		{BEE26101-3BB1-4BCF-910A-1AB69A139D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEE26101-3BB1-4BCF-910A-1AB69A139D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEE26101-3BB1-4BCF-910A-1AB69A139D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F9893F-2BD7-430E-8BD4-8E1FAD48A12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F9893F-2BD7-430E-8BD4-8E1FAD48A12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F9893F-2BD7-430E-8BD4-8E1FAD48A12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F9893F-2BD7-430E-8BD4-8E1FAD48A12D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FAE4EA35-CD4A-4A6D-AE4F-A51A5325EDC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FAE4EA35-CD4A-4A6D-AE4F-A51A5325EDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAE4EA35-CD4A-4A6D-AE4F-A51A5325EDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -91,6 +113,10 @@ Global
 		{F4721A22-C139-457A-BA90-3150745C872F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4721A22-C139-457A-BA90-3150745C872F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4721A22-C139-457A-BA90-3150745C872F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AE903F-1885-4F79-8CC4-540B1D5DF4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AE903F-1885-4F79-8CC4-540B1D5DF4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AE903F-1885-4F79-8CC4-540B1D5DF4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AE903F-1885-4F79-8CC4-540B1D5DF4B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33333333-3333-3333-3333-333333333333}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -99,6 +125,10 @@ Global
 		{44444444-4444-4444-4444-444444444444}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45FB97D-A11C-C241-5040-6330522F4C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45FB97D-A11C-C241-5040-6330522F4C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45FB97D-A11C-C241-5040-6330522F4C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45FB97D-A11C-C241-5040-6330522F4C86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,12 +141,14 @@ Global
 		{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F} = {22EF68FC-420A-4FF0-BB5C-6B29986025CD}
 		{C9D3ACBF-AF5F-4794-8103-263928A9C3AB} = {F571EB89-ABD8-4647-BED1-DB05FB79EAF6}
 		{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF} = {F571EB89-ABD8-4647-BED1-DB05FB79EAF6}
+		{A1B2C3D4-E5F6-7890-ABCD-EF1234567891} = {F571EB89-ABD8-4647-BED1-DB05FB79EAF6}
 		{57DAE65B-BCBF-4C78-8B7A-77117055D37D} = {78C51970-C43B-4E19-8925-B7C17A0918C3}
 		{BEE26101-3BB1-4BCF-910A-1AB69A139D74} = {78C51970-C43B-4E19-8925-B7C17A0918C3}
 		{FAE4EA35-CD4A-4A6D-AE4F-A51A5325EDC1} = {E9DE05B2-A002-48A4-B110-C67D24912901}
 		{F4721A22-C139-457A-BA90-3150745C872F} = {E9DE05B2-A002-48A4-B110-C67D24912901}
 		{33333333-3333-3333-3333-333333333333} = {22222222-2222-2222-2222-222222222222}
 		{44444444-4444-4444-4444-444444444444} = {22222222-2222-2222-2222-222222222222}
+		{A45FB97D-A11C-C241-5040-6330522F4C86} = {22222222-2222-2222-2222-222222222222}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0988A2DA-B39A-4198-83F8-CE4EEC10744D}
