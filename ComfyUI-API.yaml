@@ -1,0 +1,541 @@
+openapi: 3.0.3
+info:
+  title: ComfyUI API
+  description: |
+    ComfyUI API provides endpoints for managing and executing AI workflows, 
+    including real-time monitoring, file uploads, and queue management.
+  version: 1.0.0
+  contact:
+    name: ComfyUI API Support
+  license:
+    name: MIT
+
+servers:
+  - url: http://localhost:8188
+    description: Local ComfyUI server
+  - url: https://your-comfyui-server.com
+    description: Production ComfyUI server
+
+paths:
+  /ws:
+    get:
+      summary: WebSocket Connection
+      description: |
+        Establishes a WebSocket connection for real-time updates on prompt execution status, 
+        progress, and error messages. This enables clients to monitor workflow execution live.
+      tags:
+        - Real-time
+      parameters:
+        - name: client_id
+          in: query
+          description: Optional client identifier for the WebSocket connection
+          required: false
+          schema:
+            type: string
+      responses:
+        '101':
+          description: WebSocket connection established
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "WebSocket connection established"
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /prompt:
+    post:
+      summary: Queue Workflow for Execution
+      description: |
+        Queues a ComfyUI workflow for execution. Accepts a JSON payload representing 
+        the workflow's prompt and returns a prompt_id for tracking.
+      tags:
+        - Execution
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: ComfyUI workflow prompt
+              properties:
+                prompt:
+                  type: object
+                  description: The workflow prompt definition
+                  additionalProperties: true
+                client_id:
+                  type: string
+                  description: Optional client identifier
+                extra_data:
+                  type: object
+                  description: Additional data for the prompt
+                  additionalProperties: true
+              required:
+                - prompt
+            examples:
+              basic_workflow:
+                summary: Basic workflow example
+                value:
+                  prompt:
+                    "1":
+                      inputs:
+                        text: "a beautiful landscape"
+                        clip: ["2", 0]
+                      class_type: "CLIPTextEncode"
+                    "2":
+                      inputs:
+                        ckpt_name: "v1-5-pruned-emaonly.ckpt"
+                      class_type: "CheckpointLoaderSimple"
+      responses:
+        '200':
+          description: Prompt queued successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  prompt_id:
+                    type: string
+                    description: Unique identifier for the queued prompt
+                    example: "12345-67890-abcdef"
+                  number:
+                    type: integer
+                    description: Queue position number
+                    example: 1
+                  node_errors:
+                    type: object
+                    description: Any node-specific errors
+                    additionalProperties: true
+        '400':
+          description: Bad request - Invalid prompt format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /history/{prompt_id}:
+    get:
+      summary: Get Execution History
+      description: |
+        Retrieves the execution history and results (including output files) 
+        for a specific prompt_id.
+      tags:
+        - History
+      parameters:
+        - name: prompt_id
+          in: path
+          required: true
+          description: The prompt ID to retrieve history for
+          schema:
+            type: string
+            example: "12345-67890-abcdef"
+      responses:
+        '200':
+          description: Execution history retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  prompt_id:
+                    type: string
+                    description: The prompt ID
+                  status:
+                    type: object
+                    properties:
+                      status_str:
+                        type: string
+                        enum: [success, error, running, pending]
+                      completed:
+                        type: boolean
+                      messages:
+                        type: array
+                        items:
+                          type: string
+                  outputs:
+                    type: object
+                    description: Output files and results
+                    additionalProperties:
+                      type: object
+                      properties:
+                        images:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              filename:
+                                type: string
+                              subfolder:
+                                type: string
+                              type:
+                                type: string
+                              format:
+                                type: string
+        '404':
+          description: Prompt not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /view:
+    get:
+      summary: Get Image File
+      description: |
+        Returns an image file based on provided parameters like filename, 
+        subfolder, and type (e.g., input, output, temp).
+      tags:
+        - Files
+      parameters:
+        - name: filename
+          in: query
+          required: true
+          description: Name of the image file
+          schema:
+            type: string
+            example: "output_001.png"
+        - name: subfolder
+          in: query
+          required: false
+          description: Subfolder path
+          schema:
+            type: string
+            example: "output"
+        - name: type
+          in: query
+          required: false
+          description: Type of file (input, output, temp)
+          schema:
+            type: string
+            enum: [input, output, temp]
+            default: output
+        - name: format
+          in: query
+          required: false
+          description: Image format (png, jpg, webp)
+          schema:
+            type: string
+            enum: [png, jpg, webp]
+            default: png
+      responses:
+        '200':
+          description: Image file returned successfully
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+            image/webp:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Image file not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /upload/image:
+    post:
+      summary: Upload Image
+      description: |
+        Facilitates uploading image data to the ComfyUI server, which can then 
+        be used as inputs for workflows.
+      tags:
+        - Files
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: Image file to upload
+                overwrite:
+                  type: boolean
+                  description: Whether to overwrite existing file
+                  default: false
+                subfolder:
+                  type: string
+                  description: Subfolder to save the image in
+                  default: "input"
+      responses:
+        '200':
+          description: Image uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Name of the uploaded file
+                    example: "uploaded_image.png"
+                  subfolder:
+                    type: string
+                    description: Subfolder where file was saved
+                    example: "input"
+                  type:
+                    type: string
+                    description: File type
+                    example: "input"
+        '400':
+          description: Bad request - Invalid image format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: File too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /object_info:
+    get:
+      summary: Get Node Information
+      description: |
+        Provides definitions and information about the various nodes available 
+        within ComfyUI, useful for programmatically constructing prompts.
+      tags:
+        - Metadata
+      parameters:
+        - name: node_class
+          in: query
+          required: false
+          description: Filter by specific node class
+          schema:
+            type: string
+            example: "CheckpointLoaderSimple"
+      responses:
+        '200':
+          description: Node information retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    input:
+                      type: object
+                      description: Input parameters for the node
+                      additionalProperties:
+                        type: array
+                        items:
+                          type: string
+                    output:
+                      type: array
+                      description: Output types for the node
+                      items:
+                        type: string
+                    output_name:
+                      type: array
+                      description: Output names for the node
+                      items:
+                        type: string
+                    name:
+                      type: string
+                      description: Display name of the node
+                    description:
+                      type: string
+                      description: Description of the node
+                    category:
+                      type: string
+                      description: Category of the node
+                    output_node:
+                      type: boolean
+                      description: Whether this is an output node
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /queue:
+    get:
+      summary: Get Queue Status
+      description: |
+        Returns the current state of the ComfyUI prompt queue, showing pending 
+        and executing prompts.
+      tags:
+        - Queue
+      responses:
+        '200':
+          description: Queue status retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  queue_running:
+                    type: array
+                    description: Currently running prompts
+                    items:
+                      type: object
+                      properties:
+                        prompt_id:
+                          type: string
+                        status:
+                          type: object
+                        outputs:
+                          type: object
+                  queue_pending:
+                    type: array
+                    description: Pending prompts in queue
+                    items:
+                      type: object
+                      properties:
+                        prompt_id:
+                          type: string
+                        status:
+                          type: object
+                        outputs:
+                          type: object
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /interrupt:
+    post:
+      summary: Interrupt Execution
+      description: |
+        Allows for interrupting the execution of a currently running prompt.
+      tags:
+        - Control
+      responses:
+        '200':
+          description: Interrupt signal sent successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Interrupt signal sent"
+        '400':
+          description: No running prompt to interrupt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "Invalid prompt format"
+        detail:
+          type: string
+          description: Additional error details
+        code:
+          type: integer
+          description: Error code
+      required:
+        - error
+
+    PromptStatus:
+      type: object
+      properties:
+        status_str:
+          type: string
+          enum: [success, error, running, pending]
+        completed:
+          type: boolean
+        messages:
+          type: array
+          items:
+            type: string
+      required:
+        - status_str
+        - completed
+
+    QueueItem:
+      type: object
+      properties:
+        prompt_id:
+          type: string
+        status:
+          $ref: '#/components/schemas/PromptStatus'
+        outputs:
+          type: object
+          additionalProperties: true
+      required:
+        - prompt_id
+        - status
+
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authentication (if required)
+
+tags:
+  - name: Real-time
+    description: Real-time monitoring and WebSocket connections
+  - name: Execution
+    description: Workflow execution and prompt management
+  - name: History
+    description: Execution history and results
+  - name: Files
+    description: File upload and retrieval
+  - name: Metadata
+    description: Node information and API metadata
+  - name: Queue
+    description: Queue management and status
+  - name: Control
+    description: Execution control and interruption

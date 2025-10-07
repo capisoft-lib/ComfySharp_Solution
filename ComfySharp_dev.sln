@@ -4,29 +4,51 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp", "ComfySharp\ComfySharp\ComfySharp.csproj", "{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Example", "ComfySharp\ComfySharp.Example\ComfySharp.Example.csproj", "{B2C3D4E5-F6G7-8901-BCDE-F23456789012}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions", "ComfySharp.Extensions", "{22EF68FC-420A-4FF0-BB5C-6B29986025CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions", "ComfySharp.Extensions\ComfySharp.Extensions\ComfySharp.Extensions.csproj", "{4D353844-6102-49B8-AE30-D669EBA1A609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Test", "ComfySharp.Extensions\ComfySharp.Extensions.Test\ComfySharp.Extensions.Test.csproj", "{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{11111111-1111-1111-1111-111111111111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Tests", "ComfySharp\ComfySharp.Tests\ComfySharp.Tests.csproj", "{A7A2B133-9A22-4C21-9C3B-0D9F4E3F9D10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Tests", "ComfySharp.Extensions\ComfySharp.Extensions.Tests\ComfySharp.Extensions.Tests.csproj", "{B4E3C8B7-9F57-4F5F-9B2B-3F7E7E7C5F22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse.Tests", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.Tests\ComfySharp.Extensions.EasyUse.Tests.csproj", "{C5D4E9A8-6F33-4F22-8C44-1E2E3D4F5A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku.Tests", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.Tests\ComfySharp.Extensions.Nunchaku.Tests.csproj", "{D6E5F0B9-7A44-4A33-9D55-2F3F4A5B6C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor.Tests", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.Tests\ComfySharp.Extensions.ReActor.Tests.csproj", "{E7F601CA-8B55-4B44-AD66-3F4F5A6B7D88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Example", "ComfySharp.Extensions\ComfySharp.Extensions.Test\ComfySharp.Extensions.Test.csproj", "{E4967CB6-ADF1-4E2C-A4D1-9FA0793BF79F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions.EasyUse", "ComfySharp.Extensions.EasyUse", "{F571EB89-ABD8-4647-BED1-DB05FB79EAF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.csproj", "{C9D3ACBF-AF5F-4794-8103-263928A9C3AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse.Test", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.Test\ComfySharp.Extensions.EasyUse.Test.csproj", "{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.EasyUse.Example", "ComfySharp.Extensions.EasyUse\ComfySharp.Extensions.EasyUse.Test\ComfySharp.Extensions.EasyUse.Test.csproj", "{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions.Nunchaku", "ComfySharp.Extensions.Nunchaku", "{78C51970-C43B-4E19-8925-B7C17A0918C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.csproj", "{57DAE65B-BCBF-4C78-8B7A-77117055D37D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku.Test", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.Test\ComfySharp.Extensions.Nunchaku.Test.csproj", "{BEE26101-3BB1-4BCF-910A-1AB69A139D74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.Nunchaku.Example", "ComfySharp.Extensions.Nunchaku\ComfySharp.Extensions.Nunchaku.Test\ComfySharp.Extensions.Nunchaku.Test.csproj", "{BEE26101-3BB1-4BCF-910A-1AB69A139D74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.Extensions.ReActor", "ComfySharp.Extensions.ReActor", "{E9DE05B2-A002-48A4-B110-C67D24912901}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.csproj", "{FAE4EA35-CD4A-4A6D-AE4F-A51A5325EDC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor.Test", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.Test\ComfySharp.Extensions.ReActor.Test.csproj", "{F4721A22-C139-457A-BA90-3150745C872F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.Extensions.ReActor.Example", "ComfySharp.Extensions.ReActor\ComfySharp.Extensions.ReActor.Test\ComfySharp.Extensions.ReActor.Test.csproj", "{F4721A22-C139-457A-BA90-3150745C872F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComfySharp.ClientApi", "ComfySharp.ClientApi", "{22222222-2222-2222-2222-222222222222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.ClientApi", "ComfySharp.ClientApi\ComfySharp.ClientApi\ComfySharp.ClientApi.csproj", "{33333333-3333-3333-3333-333333333333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.ClientApi.Example", "ComfySharp.ClientApi\ComfySharp.ClientApi.Example\ComfySharp.ClientApi.Example.csproj", "{44444444-4444-4444-4444-444444444444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComfySharp.ClientApi.Tests", "ComfySharp.ClientApi\ComfySharp.ClientApi.Tests\ComfySharp.ClientApi.Tests.csproj", "{55555555-5555-5555-5555-555555555555}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +60,10 @@ Global
 		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BCDE-F23456789012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BCDE-F23456789012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BCDE-F23456789012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BCDE-F23456789012}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D353844-6102-49B8-AE30-D669EBA1A609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D353844-6102-49B8-AE30-D669EBA1A609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D353844-6102-49B8-AE30-D669EBA1A609}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -70,6 +96,38 @@ Global
 		{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D79E039C-CE02-4AEA-9E4F-AE61B4E598CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A2B133-9A22-4C21-9C3B-0D9F4E3F9D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A2B133-9A22-4C21-9C3B-0D9F4E3F9D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A2B133-9A22-4C21-9C3B-0D9F4E3F9D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A2B133-9A22-4C21-9C3B-0D9F4E3F9D10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E3C8B7-9F57-4F5F-9B2B-3F7E7E7C5F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E3C8B7-9F57-4F5F-9B2B-3F7E7E7C5F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E3C8B7-9F57-4F5F-9B2B-3F7E7E7C5F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E3C8B7-9F57-4F5F-9B2B-3F7E7E7C5F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D4E9A8-6F33-4F22-8C44-1E2E3D4F5A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D4E9A8-6F33-4F22-8C44-1E2E3D4F5A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D4E9A8-6F33-4F22-8C44-1E2E3D4F5A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D4E9A8-6F33-4F22-8C44-1E2E3D4F5A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E5F0B9-7A44-4A33-9D55-2F3F4A5B6C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E5F0B9-7A44-4A33-9D55-2F3F4A5B6C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E5F0B9-7A44-4A33-9D55-2F3F4A5B6C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E5F0B9-7A44-4A33-9D55-2F3F4A5B6C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7F601CA-8B55-4B44-AD66-3F4F5A6B7D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F601CA-8B55-4B44-AD66-3F4F5A6B7D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F601CA-8B55-4B44-AD66-3F4F5A6B7D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F601CA-8B55-4B44-AD66-3F4F5A6B7D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55555555-5555-5555-5555-555555555555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55555555-5555-5555-5555-555555555555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55555555-5555-5555-5555-555555555555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55555555-5555-5555-5555-555555555555}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +141,13 @@ Global
 		{BEE26101-3BB1-4BCF-910A-1AB69A139D74} = {78C51970-C43B-4E19-8925-B7C17A0918C3}
 		{FAE4EA35-CD4A-4A6D-AE4F-A51A5325EDC1} = {E9DE05B2-A002-48A4-B110-C67D24912901}
 		{F4721A22-C139-457A-BA90-3150745C872F} = {E9DE05B2-A002-48A4-B110-C67D24912901}
+		{A7A2B133-9A22-4C21-9C3B-0D9F4E3F9D10} = {11111111-1111-1111-1111-111111111111}
+		{B4E3C8B7-9F57-4F5F-9B2B-3F7E7E7C5F22} = {11111111-1111-1111-1111-111111111111}
+		{C5D4E9A8-6F33-4F22-8C44-1E2E3D4F5A66} = {11111111-1111-1111-1111-111111111111}
+		{D6E5F0B9-7A44-4A33-9D55-2F3F4A5B6C77} = {11111111-1111-1111-1111-111111111111}
+		{E7F601CA-8B55-4B44-AD66-3F4F5A6B7D88} = {11111111-1111-1111-1111-111111111111}
+		{33333333-3333-3333-3333-333333333333} = {22222222-2222-2222-2222-222222222222}
+		{44444444-4444-4444-4444-444444444444} = {22222222-2222-2222-2222-222222222222}
+		{55555555-5555-5555-5555-555555555555} = {22222222-2222-2222-2222-222222222222}
 	EndGlobalSection
 EndGlobal
