@@ -112,6 +112,23 @@ fi
 echo "✓ ComfySharp.Extensions.EasyUse package created"
 echo ""
 
+# 6. Build and pack ComfySharp.ClientApi
+echo "6. Building ComfySharp.ClientApi..."
+dotnet build ComfySharp.ClientApi/ComfySharp.ClientApi/ComfySharp.ClientApi.csproj --configuration Release
+if [ $? -ne 0 ]; then
+    echo "Failed to build ComfySharp.ClientApi!"
+    exit 1
+fi
+
+dotnet pack ComfySharp.ClientApi/ComfySharp.ClientApi/ComfySharp.ClientApi.csproj --configuration Release --output packages --no-build
+if [ $? -ne 0 ]; then
+    echo "Failed to pack ComfySharp.ClientApi!"
+    exit 1
+fi
+
+echo "✓ ComfySharp.ClientApi package created"
+echo ""
+
 # Add packages to local NuGet source
 echo "Adding packages to local NuGet source..."
 dotnet nuget add source packages --name "ComfySharp-Local" --configfile nuget.config
@@ -141,6 +158,7 @@ echo "   dotnet add package ComfySharp.Extensions --source packages"
 echo "   dotnet add package ComfySharp.Extensions.Nunchaku --source packages"
 echo "   dotnet add package ComfySharp.Extensions.ReActor --source packages"
 echo "   dotnet add package ComfySharp.Extensions.EasyUse --source packages"
+echo "   dotnet add package ComfySharp.ClientApi --source packages"
 echo ""
 echo "3. Or reference them directly in your project files"
 echo ""

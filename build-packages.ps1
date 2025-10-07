@@ -111,6 +111,23 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host "✓ ComfySharp.Extensions.EasyUse package created" -ForegroundColor Green
 Write-Host ""
 
+# 6. Build and pack ComfySharp.ClientApi
+Write-Host "6. Building ComfySharp.ClientApi..." -ForegroundColor Cyan
+dotnet build ComfySharp.ClientApi/ComfySharp.ClientApi/ComfySharp.ClientApi.csproj --configuration Release
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to build ComfySharp.ClientApi!" -ForegroundColor Red
+    exit 1
+}
+
+dotnet pack ComfySharp.ClientApi/ComfySharp.ClientApi/ComfySharp.ClientApi.csproj --configuration Release --output packages --no-build
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to pack ComfySharp.ClientApi!" -ForegroundColor Red
+    exit 1
+}
+
+Write-Host "✓ ComfySharp.ClientApi package created" -ForegroundColor Green
+Write-Host ""
+
 # Add packages to local NuGet source
 Write-Host "Adding packages to local NuGet source..." -ForegroundColor Yellow
 dotnet nuget add source packages --name "ComfySharp-Local" --configfile nuget.config
@@ -138,5 +155,6 @@ Write-Host "   dotnet add package ComfySharp.Extensions --source packages" -Fore
 Write-Host "   dotnet add package ComfySharp.Extensions.Nunchaku --source packages" -ForegroundColor Gray
 Write-Host "   dotnet add package ComfySharp.Extensions.ReActor --source packages" -ForegroundColor Gray
 Write-Host "   dotnet add package ComfySharp.Extensions.EasyUse --source packages" -ForegroundColor Gray
+Write-Host "   dotnet add package ComfySharp.ClientApi --source packages" -ForegroundColor Gray
 Write-Host ""
 Write-Host "3. Or reference them directly in your project files" -ForegroundColor White
